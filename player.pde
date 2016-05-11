@@ -27,7 +27,7 @@ class Player
   
   Player()
   {
-    playerPosition = new PVector(200, 200);
+    playerPosition = new PVector(random(50, width - 50), random(400, height - 50));
     
     playerWidth = 30;
     playerHeight = 50;
