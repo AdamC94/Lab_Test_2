@@ -55,6 +55,7 @@ class Player
     line(playerPosition.x + playerLegWidth / 2, playerPosition.y + playerHeight, playerPosition.x + playerLegWidth / 2, playerPosition.y + playerHeight + playerLegHeight);
     //right leg
     line(playerPosition.x + playerWidth - playerLegWidth / 2, playerPosition.y + playerHeight, playerPosition.x + playerWidth - playerLegWidth / 2, playerPosition.y + playerHeight + playerLegHeight);
+    noStroke();
     
     if (keyPressed)
     {

@@ -2,7 +2,9 @@ void setup() // setup method
 {
   size(600, 700);
   myPlayer = new Player();
-  myCloud = new Cloud();
+  myCloud = new Clouds();
+  myPlane = new Plane();
+  
 }
 
 void draw() // draw method
@@ -14,4 +16,6 @@ void draw() // draw method
   rect(0, height/2, width, height/2);
   myPlayer.playerDraw();
   myCloud.cloudDraw();
+  myPlane.planeDraw();
+  
 }

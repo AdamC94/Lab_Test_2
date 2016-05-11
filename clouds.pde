@@ -1,6 +1,6 @@
-Cloud myCloud;
+Clouds myCloud;
 
-class Cloud
+class Clouds
 {
   PVector cloudPosition;
   
@@ -12,10 +12,10 @@ class Cloud
   float cloudEndsWidth;
   float cloudEndsHeight;
   
-  Cloud()
+  Clouds()
   {
     cloudPosition = new PVector(400, random(20, 300));
-    
+      
     cloudWidth = 100;
     cloudHeight = 50;
     cloudHalfWidth = cloudWidth / 2;
@@ -27,6 +27,7 @@ class Cloud
   
   void cloudDraw()
   {
+    
     noStroke();
     fill(255);
     //middle
