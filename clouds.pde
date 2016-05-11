@@ -22,7 +22,7 @@ class Cloud
     cloudEndsWidth = cloudWidth /4;
     cloudEndsHeight = cloudHeight /2;
     cloudEndsBuff = 5;
-    cloudSpeed = 2;
+    cloudSpeed = random(1, 5);
   }
   
   void cloudDraw()
@@ -42,6 +42,7 @@ class Cloud
     {
       cloudPosition.x = width + cloudHalfWidth + cloudEndsWidth / 2;
       cloudPosition.y = random(20, 300);
+      cloudSpeed = random(1, 5);
     }
   }
 }
