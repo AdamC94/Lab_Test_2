@@ -4,6 +4,7 @@ void setup() // setup method
   myPlayer = new Player();
   myCloud = new Clouds();
   myPlane = new Plane();
+  myDrop = new Drop();
   
 }
 
@@ -17,5 +18,5 @@ void draw() // draw method
   myPlayer.playerDraw();
   myCloud.cloudDraw();
   myPlane.planeDraw();
-  
+  myDrop.dropDraw();
 }

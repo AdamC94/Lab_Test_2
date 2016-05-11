@@ -1,9 +1,8 @@
 Plane myPlane;
 
-class Plane
+public class Plane
 {
   
-  PVector planePosition;
   
   float planeX;
   float planeY;
@@ -11,6 +10,8 @@ class Plane
   float planeHeight;
   float planeHalfWidth;
   float planeHalfHeight;
+  
+  PVector planePosition = new PVector(0 - planeWidth, random(50, 150));
   
   float planeWingX;
   float planeWingY;
@@ -21,6 +22,20 @@ class Plane
   
   float planeSpeed;
   
+  float dropWidth;
+  float dropHeight;
+  float dropHalfWidth;
+  float dropHalfHeight;
+  float dropX;
+  float dropY;
+  
+  PVector dropPosition;
+  
+  float randomDropPositionX;
+  boolean hasDropped;
+  
+  float dropSpeed;
+  
   Plane()
   { 
     planeWidth = 125;
@@ -28,7 +43,6 @@ class Plane
     planeHalfWidth = planeWidth /2;
     planeHalfHeight = planeHeight / 2;
     
-    planePosition = new PVector(0 - planeWidth, 200);
     
     planeWingWidth = 50;
     planeWingHeight = 20;
@@ -38,6 +52,20 @@ class Plane
     planeWingY = planePosition.y - planeWingHeight;
     
     planeSpeed = 4;
+    
+    dropWidth = 50;
+    dropHeight = 50;
+    dropHalfWidth = dropWidth / 2;
+    dropHalfHeight = dropHeight / 2;
+    
+    randomDropPositionX = random(dropWidth, width - dropWidth);
+    
+    hasDropped = false;
+    
+    dropSpeed = 5;
+    
+    dropPosition = new PVector(planePosition.x + planeHalfWidth - dropHalfWidth, planePosition.y + planeHeight - dropHeight);
+    
   }
   
   void planeDraw()
@@ -54,7 +82,9 @@ class Plane
     
     if(planePosition.x >= width + planeWidth)
     {
-     planePosition.x = 0 - planeWidth ;
+      planeSpeed = random(1, 5);
+      planePosition.y = random(50, 150);
+      planePosition.x = 0 - planeWidth;
     }
   }
 }
