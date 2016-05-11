@@ -37,12 +37,18 @@ class Drop
      if(myPlane.planePosition.x - myPlane.planeHalfWidth >= randomDropPositionX)
     {
       hasDropped = true;
+     
     }
     
     if(hasDropped == true)
     {
-      rect(randomDropPositionX, myPlane.planePosition.y, dropWidth, dropHeight);
-      myDrop.dropPosition.y += dropSpeed;
+      rect(randomDropPositionX, myPlane.planePosition.y + myDrop.dropPosition.y, dropWidth, dropHeight);
+      dropPosition.y += dropSpeed;
     }
+    
+    if(dropPosition.y >= height)
+    {
+      dropPosition.y = myPlane.planePosition.y;
     }
+   }
 }
