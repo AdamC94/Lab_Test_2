@@ -51,5 +51,10 @@ class Plane
     rect(planePosition.x + planeHalfWidth - planeWingHalfWidth, planePosition.y + planeHeight, planeWingWidth, planeWingHeight);
     
     planePosition.x += planeSpeed;
+    
+    if(planePosition.x >= width + planeWidth)
+    {
+     planePosition.x = 0 - planeWidth ;
+    }
   }
 }
