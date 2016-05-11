@@ -12,10 +12,12 @@ class Player
   
   Player()
   {
+    playerPosition = new PVector(200, 200);
+    
     playerWidth = 50;
     playerHeight = 50;
     playerHalfWidth = playerWidth /2;
-    playrHalfHeight = playerHeight /2;
+    playerHalfHeight = playerHeight /2;
     playerSpeed = 5;
   }
   
@@ -26,9 +28,22 @@ class Player
     
     if (keyPressed)
     {
+      //general up down left and right movement
+      if(key == 'a')
+      {
+       playerPosition.x -= playerSpeed;
+      }
+      if(key == 'd')
+      {
+       playerPosition.x += playerSpeed;
+      } 
       if(key == 'w')
       {
-       playerPosition.y += playerSpeed;
+        playerPosition.y -= playerSpeed;
+      }
+      if(key == 's')
+      {
+        playerPosition.y += playerSpeed;
       }
     }
   }

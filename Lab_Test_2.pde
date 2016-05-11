@@ -2,6 +2,7 @@ void setup()
 {
   size(600, 700);
   myPlayer = new Player();
+  myCloud = new Cloud();
 }
 
 void draw()
@@ -12,4 +13,5 @@ void draw()
   fill(0, 255, 0);
   rect(0, height/2, width, height/2);
   myPlayer.playerDraw();
+  myCloud.cloudDraw();
 }
