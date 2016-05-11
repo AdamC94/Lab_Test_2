@@ -19,6 +19,8 @@ class Player
   float playerLegWidth = 10;
   float playerLegHeight = 25;
   
+  boolean canMove = true;
+  
   color playerColour = color(random(255), random(255), random(255));
   
   float playerSpeed;
@@ -60,19 +62,19 @@ class Player
     if (keyPressed)
     {
       //general up down left and right movement
-      if(key == 'a')
+      if(key == 'a' && canMove == true)
       {
        playerPosition.x -= playerSpeed;
       }
-      if(key == 'd')
+      if(key == 'd' && canMove == true)
       {
        playerPosition.x += playerSpeed;
       } 
-      if(key == 'w')
+      if(key == 'w' && canMove == true)
       {
         playerPosition.y -= playerSpeed;
       }
-      if(key == 's')
+      if(key == 's' && canMove == true)
       {
         playerPosition.y += playerSpeed;
       }

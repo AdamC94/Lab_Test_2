@@ -22,18 +22,6 @@ public class Plane
   
   float planeSpeed;
   
-  float dropWidth;
-  float dropHeight;
-  float dropHalfWidth;
-  float dropHalfHeight;
-  float dropX;
-  float dropY;
-  
-  PVector dropPosition;
-  
-  float randomDropPositionX;
-  boolean hasDropped;
-  
   float dropSpeed;
   
   Plane()
@@ -52,19 +40,6 @@ public class Plane
     planeWingY = planePosition.y - planeWingHeight;
     
     planeSpeed = 4;
-    
-    dropWidth = 50;
-    dropHeight = 50;
-    dropHalfWidth = dropWidth / 2;
-    dropHalfHeight = dropHeight / 2;
-    
-    randomDropPositionX = random(dropWidth, width - dropWidth);
-    
-    hasDropped = false;
-    
-    dropSpeed = 5;
-    
-    dropPosition = new PVector(planePosition.x + planeHalfWidth - dropHalfWidth, planePosition.y + planeHeight - dropHeight);
     
   }
   
@@ -85,6 +60,9 @@ public class Plane
       planeSpeed = random(1, 5);
       planePosition.y = random(50, 150);
       planePosition.x = 0 - planeWidth;
+      
+      myDrop.hasDropped = false;
+      myDrop.randomDropPositionX = random(myDrop.dropWidth, width - myDrop.dropWidth);
     }
   }
 }
